@@ -14,7 +14,7 @@ CPU_USAGE=$(top -bn1 | grep "Cpu(s)" | awk '{print $2}' | cut -d'%' -f1 2>/dev/n
 MEM_INFO=$(free -h 2>/dev/null || echo "Memory info unavailable")
 
 # Disk usage
-DISK_USAGE=$(df -h / 2>/dev/null || echo "Disk info unavailable")
+DISK_USAGE=$(df -h 2>/dev/null || echo "Disk info unavailable")
 
 # Load average
 LOAD_AVG=$(cat /proc/loadavg 2>/dev/null | cut -d' ' -f1-3 || echo "Load unavailable")
